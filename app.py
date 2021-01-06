@@ -45,6 +45,7 @@ def route_create(url: str):
     """
     Creates a new shortened URL to target the one provided.
     """
+    url = url + str(request.query_string)
     id = get_shortened_id(url)
     if id:
         # return Response(status=403)
